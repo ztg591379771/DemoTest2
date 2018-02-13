@@ -3,6 +3,10 @@
 #include "StandardSlateWidget.h"
 #include "SlateOptMacros.h"
 #include "TestSCheckBoxUI.h"
+#include "Widgets/Layout/SBox.h"
+#include "Widgets/SOverlay.h"
+#include "MySAssetView.h"
+#include "CanDragWidget.h"
 
 BEGIN_SLATE_FUNCTION_BUILD_OPTIMIZATION
 
@@ -36,13 +40,35 @@ void SStandardSlateWidget::Construct(const FArguments& InArgs)
 			//	// localized text to be translated with a generic name HelloSlateText
 			//	.Text(LOCTEXT("HelloSlateText", "Hello, Slate!"))
 			//]
-			SNew(SOverlay)
+			/*SNew(SOverlay)
 			+SOverlay::Slot()
 			.VAlign(VAlign_Center)
 			.HAlign(HAlign_Center)
 			[
 				SNew(STestSCheckBoxUI)
+			]*/
+			SNew(SOverlay)
+			+SOverlay::Slot()
+			.HAlign(HAlign_Fill)
+			.VAlign(VAlign_Fill)
+			[
+				SNew(SMySAssetView)
 			]
+			+SOverlay::Slot()
+			.HAlign(HAlign_Left)
+			.VAlign(VAlign_Top)
+			[
+				SNew(SBox)
+				.HeightOverride(200)
+				.WidthOverride(200)
+				[
+					SNew(SCanDragWidget)
+					.Cursor(EMouseCursor::GrabHand)
+					
+				]
+			]
+			
+			
 		];
 
 }
