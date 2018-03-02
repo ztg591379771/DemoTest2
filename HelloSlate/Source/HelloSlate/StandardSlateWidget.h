@@ -3,6 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "SlateBasics.h"
+#include "MyClass.h"
 #include "Widgets/SCompoundWidget.h"
 /**
  * 
@@ -26,5 +28,7 @@ private:
 	// ++ Pointer to our parent HUD. To make sure HUD's lifetime is controlled elsewhere, use "weak" ptr.
 	// ++ HUD has a "strong" pointer to Widget, circular ownership would prevent/break self-destruction of hud/widget (cause a memory leak).
 	TWeakObjectPtr<class AStandardHUD> OwnerHUD;
-
+	FReply GetUserName() const;
+	FString UserName;
+	FString Password;
 };
