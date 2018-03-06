@@ -15,6 +15,7 @@ class HELLOSLATE_API AHelloSlateGameModeBase : public AGameModeBase
 	GENERATED_BODY()
 	
 public:
+	virtual void BeginPlay() override;
 	// ++ Add a constructor
 	AHelloSlateGameModeBase();
 	
