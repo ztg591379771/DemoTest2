@@ -4,6 +4,7 @@
 #include "SlateBasics.h"
 #include "MySQLDBConnect.h"
 #include "SlateOptMacros.h"
+#include "SChageSunRotation.h"
 
 BEGIN_SLATE_FUNCTION_BUILD_OPTIMIZATION
 
@@ -31,14 +32,17 @@ void SStandardSlateWidget::Construct(const FArguments& InArgs)
 		.VAlign(VAlign_Center)
 		.HAlign(HAlign_Center)
 		[
-			// Inside lies a text block with these settings
-			SNew(STextBlock)
-			.ShadowColorAndOpacity(FLinearColor::Black)
-		.ColorAndOpacity(FLinearColor::Red)
-		.ShadowOffset(FIntPoint(-1, 1))
-		.Font(FSlateFontInfo("Veranda", 64))
-		// localized text to be translated with a generic name HelloSlateText
-		.Text(LOCTEXT("HelloSlateText", "hello"))
+
+			SNew(SChageSunRotation)
+			
+		//	// Inside lies a text block with these settings
+		//	SNew(STextBlock)
+		//	.ShadowColorAndOpacity(FLinearColor::Black)
+		//.ColorAndOpacity(FLinearColor::Red)
+		//.ShadowOffset(FIntPoint(-1, 1))
+		//.Font(FSlateFontInfo("Veranda", 64))
+		//// localized text to be translated with a generic name HelloSlateText
+		//.Text(LOCTEXT("HelloSlateText", "hello"))
 		]
 		];
 

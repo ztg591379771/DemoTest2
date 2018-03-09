@@ -1,4 +1,5 @@
 
+#pragma once
 #include "MySQLSupport.h"
 #include "MySQLDBConnect.h"
 
@@ -18,6 +19,7 @@ void MySQLDBConnect::Init()
 	mysql_set_character_set(&mysql, "utf8");
 }
 
+
 MySQLDBConnect::MySQLDBConnect()
 {
 	version_str = "Î´ÕÒµ½";
@@ -27,4 +29,14 @@ MySQLDBConnect::MySQLDBConnect()
 
 MySQLDBConnect::~MySQLDBConnect()
 {
+}
+
+void MySQLDBConnect::findSQL()
+{
+	////1.µ÷ÓÃSQL Óï¾ä·¶Àý
+	//TMap<FString, TArray<FString>> SQLDataMap;
+	//SQLDataMap.Empty();
+
+	//FString SQLText = TEXT("select username from username");
+	//SQLDataMap = CallSQL(TCHAR_TO_ANSI(*SQLText));
 }
